@@ -1,0 +1,21 @@
+QtProj/*/build-src-Desktop_*/
+build-host_debug/
+build-host/
+build-cross/
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+
+# qtcreator generated files
+*.pro.user*
+CMakeLists.txt.user*
+
+*.img
+*.bkp
+*.ko
+*.mod
+Qt_themself/qt5/
+*.autosave
+*.csv
+build*/
