@@ -45,7 +45,7 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION /usr/bin)
 
 SET(CPACK_GENERATOR "DEB")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "27889022+AndreiCherniaev@users.noreply.github.com")
-set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/AndreiCherniaev/replxx_thread")
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/AndreiCherniaev/replxx_multithreading")
 
 set(CPACK_SET_DESTDIR true)
 set(CPACK_INSTALL_PREFIX bin)
