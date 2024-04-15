@@ -654,14 +654,7 @@ void ConsoleWorker::run(){
             rx.history_add( input );
             continue;
         }
-
-        QCoreApplication::processEvents();
-        if(QThread::currentThread()->isInterruptionRequested()){
-            goto exit_LABEL;
-        }
-        QThread::sleep(1); //1 s pause
     }
-    goto exit_LABEL;
 exit_LABEL:;
     if ( ! keys.empty() || tickMessages || promptFan ) {
         tick.stop();

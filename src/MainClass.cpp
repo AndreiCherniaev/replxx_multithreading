@@ -4,20 +4,6 @@
 #include <QDateTime>
 #include "MainClass.h"
 
-MainClass *MainClass::rialSelf;
-
-//Ctrl+C handler
-//void SigInt_Handler(int n_signal){
-void MainClass::handleSignal(int num){
-    qDebug()<<"Welcome to Signal handled: "<<num;
-    //Stop thread
-    if(consoleThread.get()->isRunning()) consoleThread->requestInterruption();
-    else QCoreApplication::quit();
-/*
-#warning need fix
-    QCoreApplication::quit();*/
-}
-
 
 //This is part of MainClass's constructor to init signal-slot
 void MainClass::Console_SIGNAL_SETTINGS(){
@@ -37,7 +23,6 @@ MainClass::MainClass(QObject *parent)
     ,consoleWorker(new ConsoleWorker()) //родителя нет, ибо "The object cannot be moved if it has a parent."
     ,consoleThread(new QThread(this)) //родитель есть (не обязательно)
 {
-    MainClass::setSignalHandlerObject(this); //for Ctrl+C
     Console_SIGNAL_SETTINGS();
     consoleThread->start();
 }
