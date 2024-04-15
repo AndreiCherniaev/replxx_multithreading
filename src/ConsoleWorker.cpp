@@ -15,7 +15,6 @@
 
 #include "ConsoleWorker.h"
 #include <unistd.h>
-#include "main.h"
 
 using Replxx = replxx::Replxx;
 using namespace replxx::color;
