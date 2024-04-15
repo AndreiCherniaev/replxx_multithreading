@@ -474,7 +474,12 @@ void ConsoleWorker::run(){
     rx.bind_key_internal( Replxx::KEY::control( 'Y' ),                 "yank" );
     rx.bind_key_internal( Replxx::KEY::control( 'L' ),                 "clear_screen" );
     rx.bind_key_internal( Replxx::KEY::control( 'D' ),                 "send_eof" );
-    rx.bind_key_internal( Replxx::KEY::control( 'C' ),                 "abort_line" );
+
+    Replxx::key_press_handler_t mySigIntHandler= [](char32_t code){
+        return Replxx::ACTION_RESULT::BAIL;
+    };
+    rx.bind_key( Replxx::KEY::control( 'C' ), mySigIntHandler);
+
     rx.bind_key_internal( Replxx::KEY::control( 'T' ),                 "transpose_characters" );
 #ifndef _WIN32
     rx.bind_key_internal( Replxx::KEY::control( 'V' ),                 "verbatim_insert" );
