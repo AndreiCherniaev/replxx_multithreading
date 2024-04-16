@@ -7,10 +7,13 @@
 #include <QCommandLineParser>
 #include "replxx.hxx"
 
+using Replxx = replxx::Replxx;
+
 class ConsoleWorker : public QObject
 {
     Q_OBJECT
 public:
+    Replxx rx;
     explicit ConsoleWorker(QObject *parent = nullptr);
 
 public slots:

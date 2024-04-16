@@ -16,7 +16,6 @@
 #include "ConsoleWorker.h"
 #include <unistd.h>
 
-using Replxx = replxx::Replxx;
 using namespace replxx::color;
 
 class Tick {
@@ -405,7 +404,6 @@ void ConsoleWorker::run(){
     // }
 
     // init the repl
-    Replxx rx;
     Tick tick( rx, keys, tickMessages, promptFan );
     rx.install_window_change_handler();
 
