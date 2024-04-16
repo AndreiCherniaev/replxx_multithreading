@@ -23,11 +23,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
 add_executable(${PROJECT_NAME}
-  # cxx-api.cxx
   util.c util.h
   include/replxx.hxx
 
-  MainClass.cpp MainClass.h
+  MainClass.cpp MainClass.h #instead of cxx-api.cxx
   main.cpp main.h
   ConsoleWorker.h ConsoleWorker.cpp
 )
