@@ -475,7 +475,7 @@ void ConsoleWorker::run(){
     Replxx::key_press_handler_t mySigIntHandler= [](char32_t code){
         return Replxx::ACTION_RESULT::BAIL;
     };
-    rx.bind_key( Replxx::KEY::control( 'C' ), mySigIntHandler);
+    rx.bind_key( Replxx::KEY::control( 'C' ), mySigIntHandler); //https://stackoverflow.com/questions/78335857/how-exit-from-replxx-using-ctrlc/78335874#78335874
 
     rx.bind_key_internal( Replxx::KEY::control( 'T' ),                 "transpose_characters" );
 #ifndef _WIN32

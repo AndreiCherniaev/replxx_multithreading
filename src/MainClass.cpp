@@ -13,7 +13,7 @@ void MainClass::handleSignal(int num){
     if(consoleThread.get()->isRunning()){ //if thread isRunning then let's stop it
         //I am not sure that it is best practice to call object consoleWorker->rx from anther thread but in most cases it should works...
         //Best practice will be use signal-slot system for it, but replxx doesn't use Qt inside...
-        consoleWorker->rx.emulate_key_press(Replxx::KEY::control( 'C' )); //thanks https://github.com/AmokHuginnsson/replxx/issues/132#issuecomment-972951849
+        consoleWorker->rx.emulate_key_press(Replxx::KEY::control( 'C' )); //thanks https://github.com/AmokHuginnsson/replxx/issues/132#issuecomment-972951849 https://stackoverflow.com/questions/78336312/how-exit-replxx-using-sigint-from-another-thread
     }else QCoreApplication::quit();
 }
 
